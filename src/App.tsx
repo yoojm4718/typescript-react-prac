@@ -1,4 +1,5 @@
 import React from "react";
+import Number from "./Number";
 
 interface IState {
   counter: number;
@@ -8,16 +9,16 @@ class App extends React.Component<{}, IState> {
   state = {
     counter: 0,
   };
-  add() {
+  add = () => {
     this.setState((prev) => {
       return { counter: prev.counter + 1 };
     });
-  }
+  };
   render() {
     const { counter } = this.state;
     return (
       <div>
-        {counter}
+        <Number count={counter} />
         <button onClick={this.add}>Add</button>
       </div>
     );
